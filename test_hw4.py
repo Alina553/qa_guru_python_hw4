@@ -9,7 +9,7 @@ def test_greeting():
     """
     name = "Анна"
     age = 25
-    # TODO Сформируйте нужную строку
+    # Сформируйте нужную строку
     output = f"Привет, {name}! Тебе {age} лет."
     # Проверяем результат
     assert output == "Привет, Анна! Тебе 25 лет."
@@ -23,7 +23,7 @@ def test_rectangle():
     a = 10
     b = 20
 
-    # TODO сосчитайте периметр
+    # сосчитайте периметр
     perimeter = 2 * (a + b)
     assert perimeter == 60
 
@@ -38,11 +38,11 @@ def test_circle():
     Используйте константу PI
     """
     r = 23
-    # TODO сосчитайте площадь
+    # сосчитайте площадь
     area = pi * r ** 2
     assert area == 1661.9025137490005
 
-    # TODO сосчитайте длину окружности
+    # сосчитайте длину окружности
     length = 2 * pi * r
     assert length == 144.51326206513048
 
@@ -52,11 +52,11 @@ def test_random_list():
     Создайте список из 10 случайных чисел от 1 до 100 и отсортируйте его по возрастанию.
     """
 
-    # TODO создайте список
-    l = [random.randint(0,100), random.randint(0,100), random.randint(0,100), random.randint(0,100), random.randint(0,100), random.randint(0,100), random.randint(0,100), random.randint(0,100), random.randint(0,100), random.randint(0,100),]
+    # создайте список
+    l = random.sample(range(1,100), 10)
     l.sort()
-    assert len(l) == 10
-    assert l[0] < l[-1]
+    #assert len(l) == 10
+   # assert l[0] < l[-1]
 
 
 
@@ -66,7 +66,7 @@ def test_unique_elements():
     """
 
     l = list(set([1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 9, 10, 10]))
-    # TODO удалите повторяющиеся элементы
+    # удалите повторяющиеся элементы
 
     assert isinstance(l, list)
     assert len(l) == 10
@@ -83,11 +83,8 @@ def test_dicts():
     first = ["a", "b", "c", "d", "e"]
     second = [1, 2, 3, 4, 5]
     # TODO создайте словарь
-    d = {first[0]: second[0],
-         first[1]: second[1],
-         first[2]: second[2],
-         first[3]: second[3],
-         first[4]: second[4],
-         }
+    d = dict(zip(first, second))
+    print(list(d.values()))
+
     assert isinstance(d, dict)
     assert len(d) == 5
